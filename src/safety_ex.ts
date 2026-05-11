@@ -2,6 +2,12 @@ function greet(user: { name: string; age?: number }) {
   console.log(`Hello, ${user.name}`);
   console.log(`You are ${user.age} years old`);
 //   "You are undefined years old" 출력
+  // age가 undefined일 수 있으므로 체크 후 사용
+  if (user.age !== undefined) {
+    console.log(`You are ${user.age} years old`);
+  } else {
+    console.log("Age is not provided");
+  }
 }
 
 greet({
